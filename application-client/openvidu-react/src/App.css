@@ -129,7 +129,14 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
   }
   
-
+  /* .menu-detail-section {
+    margin-top: 0px;
+    background-color: rgba(255, 255, 255, 0.8); /* 반투명 흰색 배경 */
+    /* backdrop-filter: blur(8px); /* 배경 흐림 효과 */
+    /* border-radius: 8px; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 부드러운 그림자 */
+    /* width: 100%; */
+  /* } */
 /* Media Queries */
 @media screen and (max-width: 768px) {
     #join-dialog {

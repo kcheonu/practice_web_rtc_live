@@ -6,6 +6,8 @@ import VideoComponent from "./components/VideoComponent"; // 비디오 컴포넌
 import AudioComponent from "./components/AudioComponent"; // 오디오 컴포넌트
 import ChatComponent from "./components/ChatComponent"; // 채팅 컴포넌트
 import OrderListComponent from "./components/OrderListComponent"; // 주문 목록 컴포넌트
+import MenuDetailComponent from "./components/MenuDetailComponent";
+
 
 // fontAwesome 아이콘 추가
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -244,6 +246,9 @@ function App() {
                     <div id="layout-container" className="section chat-section">
                         <ChatComponent participantName={participantName} />
                     </div>
+                    {/* <div id="layout-container" className="section menu-detail-section"> */}
+                        {/* <MenuDetailComponent /> */}
+                    {/* </div> */}
                 </div>
             )}
         </>

@@ -95,16 +95,17 @@ function VideoComponent({ track, participantIdentity, local = false, roomName, o
 
 
     return (
-        <div id={"camera-" + participantIdentity} className="video-container">
+        <div id={"camera-" + participantIdentity} className="relative w-full h-auto">
             {/* 참가자 이름 및 방 이름 */}
-            <div className="participant-overlay bg-transparent text-black">
-                <p>
-                    {roomName} {participantIdentity} {local ? " (You)" : ""}
-                </p>
-            </div>
+            <p className="absolute top-2 left-2 bg-transparent text-black px-3 py-1 rounded-md text-sm font-bold z-10">
+                {participantIdentity} {local ? " (RestaurantName)" : ""}
+            </p>
+    
+            {/* 비디오 태그 */}
             <video
                 ref={videoElement}
                 id={track.sid ? track.sid.toString() : undefined}
+                className="w-full h-auto object-cover rounded-md"
                 autoPlay
                 playsInline
             ></video>

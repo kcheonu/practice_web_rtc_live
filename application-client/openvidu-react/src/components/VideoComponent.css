@@ -21,7 +21,7 @@
 /* 📌 참가자 이름 & 방 이름 오버레이 스타일 */
 .participant-overlay {
     position: absolute;
-    top: 10px;
+    top: 10%;
     left: 20%;
     transform: translateX(-50%); /* 가운데 정렬 */
     background: rgba(0, 0, 0, 0.6); /* 반투명 검정 배경 */
