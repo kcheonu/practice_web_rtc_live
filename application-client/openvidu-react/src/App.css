@@ -1,0 +1,162 @@
+#join {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#join-dialog {
+    width: 70%;
+    max-width: 900px;
+    padding: 60px;
+    border-radius: 6px;
+    background-color: #f0f0f0;
+}
+
+#join-dialog h2 {
+    color: #4d4d4d;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#join-dialog form {
+    text-align: left;
+}
+
+#join-dialog label {
+    display: block;
+    margin-bottom: 10px;
+    color: #0088aa;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    color: #0088aa;
+    font-weight: bold;
+}
+
+.form-control:focus {
+    color: #0088aa;
+    border-color: #0088aa;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 136, 170, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 136, 170, 0.6);
+}
+
+#join-dialog button {
+    display: block;
+    margin: 20px auto 0;
+}
+
+.btn {
+    font-weight: bold;
+}
+
+.btn-success {
+    background-color: #06d362;
+    border-color: #06d362;
+}
+
+.btn-success:hover {
+    background-color: #1abd61;
+    border-color: #1abd61;
+}
+
+#room {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#room-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+#room-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+#layout-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+}
+
+/* 공통 스타일 */
+.section {
+    width: 100%; /* 부모 컨테이너에 맞춰 가로 길이를 채움 */
+    max-width: 1200px; /* 최대 너비를 영상 섹션과 일치 */
+    margin: 0 auto; /* 가로 가운데 정렬 */
+    padding: 0px; /* 내부 여백 */
+  }
+  
+  /* 주문 목록 스타일 */
+  .order-section {
+    margin-top: 0px;
+    background-color: rgba(255, 255, 255, 0.8); /* 반투명 흰색 배경 */
+    backdrop-filter: blur(8px); /* 배경 흐림 효과 */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+    width: 100%;
+  }
+  
+  /* 채팅 섹션 스타일 */
+  .chat-section {
+    margin-top: 0px;
+    background-color: rgba(255, 255, 255, 0.8); /* 반투명 흰색 배경 */
+    backdrop-filter: blur(8px); /* 배경 흐림 효과 */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+  }
+  
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    #join-dialog {
+        width: 100%;
+        padding: 30px;
+    }
+
+    #join-dialog h2 {
+        font-size: 50px;
+    }
+
+    #layout-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #join-dialog {
+        width: 100%;
+        padding: 20px;
+    }
+
+    #join-dialog h2 {
+        font-size: 40px;
+    }
+
+    #layout-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}

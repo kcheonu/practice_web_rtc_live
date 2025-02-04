@@ -1,0 +1,27 @@
+
+
+ /* 주문 목록 섹션 스타일 */
+ .order-section {
+    margin-top: 16px;
+    background-color: rgba(255, 255, 255, 0.8); /* 반투명 흰색 배경 */
+    backdrop-filter: blur(8px); /* 배경 흐림 효과 */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+    position: relative; /* 기본 위치 */
+    padding: 10px;
+ }
+
+ /* Media Queries */
+@media screen and (max-width: 768px) {
+    .order-section {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .order-section {
+        width: 100%;
+        padding: 15px;
+    }
+}

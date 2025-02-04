@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ✅ Tailwind @apply 적용 */
+.chat-section {
+    @apply mt-4 bg-white/80 backdrop-blur-md rounded-lg shadow-md relative p-3;
+}
+
+/* ✅ 메시지 스타일 */
+.chat-message {
+    @apply mb-1 p-2 rounded-md bg-white text-black;
+}
+
+/* ✅ 채팅 컨테이너 */
+.chat-container {
+    @apply bg-gray-300 p-3 rounded-lg overflow-y-auto;
+}
+
+/* ✅ 시스템 메시지 스타일 */
+.chat-message.system {
+    @apply bg-red-200 text-red-700 font-bold;
+}
+
+/* ✅ 입력창 스타일 */
+.chat-input {
+    @apply w-full p-2 rounded-md border border-gray-400 text-sm;
+}
+
+/* ✅ Tailwind 반응형 적용
+@screen md {
+    #join-dialog {
+        @apply w-11/12 p-8;
+    }
+    #join-dialog h2 {
+        @apply text-3xl;
+    }
+    #layout-container {
+        @apply grid grid-cols-auto-fit gap-4;
+    }
+}
+
+@screen sm {
+    #join-dialog {
+        @apply w-full p-5;
+    }
+    #join-dialog h2 {
+        @apply text-2xl;
+    }
+    #layout-container {
+        @apply grid grid-cols-auto-fit gap-2;
+    }
+} */

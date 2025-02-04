@@ -1,0 +1,43 @@
+.video-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* 비디오 스타일 */
+.video-container video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* 📌 참가자 이름 & 방 이름 오버레이 스타일 */
+.participant-overlay {
+    position: absolute;
+    top: 10px;
+    left: 20%;
+    transform: translateX(-50%); /* 가운데 정렬 */
+    background: rgba(0, 0, 0, 0.6); /* 반투명 검정 배경 */
+    color: white;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 8px;
+    z-index: 10;
+    white-space: nowrap; /* 줄 바꿈 방지 */
+}
+
+/* 📌 모바일 최적화 */
+@media screen and (max-width: 480px) {
+    .participant-overlay {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+}
