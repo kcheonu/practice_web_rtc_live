@@ -26,7 +26,7 @@ const Footer = () => {
             to={item.path}
             className={`flex flex-col items-center justify-center cursor-pointer ${
               location.pathname === item.path
-                ? "text-[#FF9C07]"
+                ? "text-[#F78A16]"
                 : "text-gray-400"
             }`}
           >
