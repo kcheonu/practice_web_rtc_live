@@ -43,7 +43,7 @@ function OrderListComponent() {
                             {/* 메뉴 + 가격 */}
                             <div className="ml-60">
                                 <p className="text-sm text-black items-center whitespace-nowrap">{order.menu}</p>
-                                <p className="text-sm font-bold text-black whitespace-nowrap">
+                                <p className="text-sm text-black whitespace-nowrap">
                                     ₩{order.value.toLocaleString()}
                                 </p>
                             </div>

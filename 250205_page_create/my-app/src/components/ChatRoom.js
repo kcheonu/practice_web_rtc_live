@@ -5,17 +5,14 @@ function ChatComponent({ participantName }) {
     const [inputMessage, setInputMessage] = useState("");
     const chatEndRef = useRef(null);
 
-    // ✅ 시스템 메시지는 컴포넌트 처음 렌더링 시 추가
     useEffect(() => {
         setMessages([{ user: "시스템", text: "가게 소개글" }]);
     }, []);
 
-    // 채팅창 자동 스크롤
     useEffect(() => {
         chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [messages]);
 
-    // 메시지 전송
     const sendMessage = (e) => {
         e.preventDefault();
         if (inputMessage.trim() !== "") {
@@ -30,7 +27,7 @@ function ChatComponent({ participantName }) {
     return (
         
         <div className="bg-gray-100 rounded-lg shadow-md">
-            <div>채팅팅</div>
+            <div>채팅</div>
             {/* 채팅 메시지 목록 */}
             <div className="overflow-y-auto h-64 mb-2">
                 {messages.map((msg, index) => (
@@ -38,7 +35,7 @@ function ChatComponent({ participantName }) {
                         key={index}
                         className={`text-sm ${
                             msg.user === "시스템"
-                                ? "font-bold text-red-500" // 시스템 메시지 스타일
+                                ? "font-bold text-[#F87A16]" // 시스템 메시지 스타일
                                 : "text-gray-800"
                         }`}
                     >
@@ -59,7 +56,7 @@ function ChatComponent({ participantName }) {
                 />
                 <button
                     type="submit"
-                    className="ml-2 bg-blue-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-600"
+                    className="ml-2 bg-[#F87A16] text-white px-4 py-2 rounded-lg text-sm"
                 >
                     전송
                 </button>

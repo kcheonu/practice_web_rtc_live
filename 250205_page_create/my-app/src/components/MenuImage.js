@@ -28,6 +28,9 @@ function MenuImage() {
                 <div className="text-sm">
                     메뉴 설명 및 알레르기 정보
                 </div>
+                <div>
+                    
+                </div>
             </div>
         </div>
     );

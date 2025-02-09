@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import RestoImage from "../components/RestoImage";
 import MenuInfo from "../components/MenuInfo";
 import RestoInfo from "../components/RestoInfo";
+// import Footer from "../components/layout/Footer";
+import Layout from "../components/layout/Layout";
+import Restonavbar
+ from "../components/Restonavbar";
 import Footer from "../components/layout/Footer";
-
 function RestoDetailPage({ restaurant_id, user_id}) {
+    const [activeTab, setActiveTab] = useState("menuinfo");
+
+    const renderActiveTab = () => {
+        if (activeTab === "menuinfo") {
+            return <MenuInfo />;
+        }
+        if (activeTab === "restoinfo") {
+            return <RestoInfo />;
+        }
+    }
     // restaurant_id로 가게 상세정보 불러오기
     // restaurant_id로 가게 메뉴 카테고리 불러오기
     // restaurant_id로 가게 메뉴 불러오기
@@ -34,25 +47,46 @@ function RestoDetailPage({ restaurant_id, user_id}) {
         <div className="flex flex-col min-h-screen">
             {/* 상단 콘텐츠 */}
             <div className="flex-1">
-                <div>이전화면, 장바구니</div>
+                <div className="w-full h-[8vh] bg-white text-black border border-gray">
+                    <Layout />
+                </div>
                 <div className="w-full h-16 bg-white text-black border border-gray">
                     <RestoImage /> {/* photo, thumbnail, isOpen, isLive, starAvg, cleannessAvg, reviewCnt*/}
                 </div>
-                <div className="w-full h-16 bg-white text-black border border-gray">
-                    <MenuInfo /> {/* resaurant_id, id? */}
+                <div className="w-full h-[8vh] bg-white text-black border border-gray">
+                    <Restonavbar />
+                </div>
+                <div className="w-full bg-white text-black border-b border-gray flex">
+                    <button
+                        className={`flex-1 py-2 text-center ${
+                            activeTab === "menuinfo"
+                                ? "text-[#F78A16] border-b-2 border-[#F78A16]"
+                                : "text-gray-500"
+                        }`}
+                        onClick={() => setActiveTab("menuinfo")}
+                    >
+                        메뉴 정보
+                    </button>
+                    <button
+                        className={`flex-1 py-2 text-center ${
+                            activeTab === "restoinfo"
+                                ? "text-[#F78A16] border-b-2 border-[#F78A16]"
+                                : "text-gray-500"
+                        }`}
+                        onClick={() => setActiveTab("restoinfo")}
+                    >
+                        가게 정보
+                    </button>
                 </div>
                 <div className="w-full h-auto bg-white text-black border border-gray">
-                    <RestoInfo 
-                        // restaurant_id={restaurant_id}
-
-                    /> {/* address, lat, lon, description, businessHours, closedDays, originCountry, tel*/}
+                    {renderActiveTab()}
+                     {/* address, lat, lon, description, businessHours, closedDays, originCountry, tel*/}
+                </div>
+                <div className="w-full h-[8vh] bg-white text-black border border-gray">
+                    <Footer />
                 </div>
             </div>
-
-            {/* 하단 Footer */}
-            <div className="w-full bg-white text-black border-t border-gray py-4">
-                <Footer />
-            </div>
+            
         </div>
     );
 }

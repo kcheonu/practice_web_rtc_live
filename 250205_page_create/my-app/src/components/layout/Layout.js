@@ -70,6 +70,24 @@ function Layout() {
           showCartButton: true,
           showAlertButton: false
         };
+      case '/resto-review':
+        return {
+          showBackButton: true,
+          showCartButton: true,
+          showAlertButton: false
+        }
+      case '/resto-detail':
+        return {
+          showBackButton: true,
+          showCartButton: true,
+          showAlertButton: false
+        }
+      case '/streaming-view':
+        return {
+          showBackButton: true,
+          showCartButton: true,
+          showAlertButton: false
+        }
       default:
         return {
           title: "홈",
