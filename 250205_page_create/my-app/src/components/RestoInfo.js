@@ -1,28 +1,36 @@
 import React from "react";
 
-// address, lat, lon, description, businessHours, closedDays, originCountry, tel
-function RestoInfo() {
-    const address = '역삼역'
-    const businessHours = '18:00 ~ 04:00'
-    const closedDays = ['화요일, 수요일']
-    const tel = '02-1234-1234'
-    const originCountry = {'닭' : '브라질산', '김치' : '중국산'}
+function RestoInfo({ address, businessHours, closedDays, tel, originCountry }) {
+    return (
+        <div className="p-4 border border-gray-300 bg-white rounded-lg shadow-md">
+            <h2 className="text-lg font-semibold mb-2">가게 정보</h2>
+            <p><strong>주소:</strong> {address || "정보 없음"}</p>
+            <p><strong>운영시간:</strong> {businessHours || "정보 없음"}</p>
 
-    return(
-    <div>
-        <p>주소 : {address} </p>
-        <p>운영시간 : {businessHours} </p>
-        <p>휴무일 : {closedDays} </p>
-        <p>전화번호 : {tel} </p>
-        <p>원산지 표기</p> 
-        <ul>
-        {Object.entries(originCountry).map(([key, value]) => (
-            <li key={key}>
-                {key} : {value}
-            </li>
-        ))}
-        </ul>
-    </div>
+            {/* closedDays가 배열인지 확인하고, 배열이면 join 사용, 아니면 그대로 출력 */}
+            <p>
+                <strong>휴무일:</strong>{" "}
+                {Array.isArray(closedDays) ? closedDays.join(", ") : closedDays || "정보 없음"}
+            </p>
+
+            <p><strong>전화번호:</strong> {tel || "정보 없음"}</p>
+
+            {/* 원산지 표기 */}
+            <div className="mt-2">
+                <h3 className="text-md font-semibold">원산지 표기</h3>
+                {originCountry && Object.keys(originCountry).length > 0 ? (
+                    <ul className="list-disc pl-4">
+                        {Object.entries(originCountry).map(([key, value]) => (
+                            <li key={key}>
+                                <strong>{key}</strong>: {value}
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>정보 없음</p>
+                )}
+            </div>
+        </div>
     );
 }
 

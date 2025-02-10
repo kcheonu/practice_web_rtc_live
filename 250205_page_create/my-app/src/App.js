@@ -17,6 +17,7 @@ import StreamingViewPage from './pages/StreamingViewPage';
 import MenuDetailPage from './pages/MenuDetailPage';
 import RestoDetailPage from './pages/RestoDetailPage';
 import RestoReviewPage from './pages/RestoReviewPage';
+import ManageOrderandStreamingPage from './pages/ManageOrderandStreaming';
 
 function App() {
   return (
@@ -37,9 +38,10 @@ function App() {
             {/* <Route path="liked" element={<LikedPage />} /> */}
           {/* </Route> */}
           <Route path="/streaming-view" element={<StreamingViewPage />} />
-          <Route path="/menu-detail" element={<MenuDetailPage />} />
-          <Route path="/resto-detail" element={<RestoDetailPage />} />
-          <Route path="/resto-review" element={<RestoReviewPage />} />
+          <Route path="/menu-detail/:menuId" element={<MenuDetailPage />} />
+          <Route path="/resto-detail/:id" element={<RestoDetailPage />} />
+          <Route path="/resto-review/:restaurant" element={<RestoReviewPage />} />
+          <Route path="/manage-order&streaming" element={<ManageOrderandStreamingPage />} />
         </Routes>
       </div>
     </Router>

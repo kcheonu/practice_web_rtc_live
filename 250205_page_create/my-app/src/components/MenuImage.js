@@ -1,36 +1,23 @@
-// id : 1
-// menuCategoryId : 1
-// name : 불고기
-// price : 15000
-// menuPhoto : "image-url"
-// soldout : false
 import React from "react";
 
-function MenuImage() {
-    const Menu = [
-        {
-            id: 1,
-            menuCategoryId: 1,
-            name: '불고기',
-            price: 15000,
-            menuPhoto: "image-url",
-            soldout: false // 변경 테스트 가능
-        }
-    ];
-
+function MenuImage({ photo, name, soldout }) {
     return (
-        <div className="">
-            <div>
-                <img src={Menu[0].menuPhoto} alt="메뉴 이미지" className="w-[200px] h-[200px] items-center flex-1"/>
-                <div className="text-lg">
-                    {Menu[0].soldout ? <p>재료소진으로 인한 품절입니다.</p> : <p>{Menu[0].name}</p>}
-                </div>
-                <div className="text-sm">
-                    메뉴 설명 및 알레르기 정보
-                </div>
-                <div>
-                    
-                </div>
+        <div className="flex flex-col items-center">
+            {/* ✅ 메뉴 이미지 */}
+            <img 
+                src={photo || "https://via.placeholder.com/150"} // 기본 이미지 설정
+                alt="메뉴 이미지" 
+                className="w-[200px] h-[200px] object-cover rounded-lg"
+            />
+
+            {/* ✅ 메뉴명 & 품절 상태 */}
+            <div className="text-lg font-semibold mt-2">
+                {soldout ? <p className="text-red-500">🚨 재료소진으로 인한 품절입니다.</p> : <p>{name}</p>}
+            </div>
+
+            {/* ✅ 메뉴 설명 및 추가 정보 */}
+            <div className="text-sm text-gray-500 mt-1">
+                메뉴 설명 및 알레르기 정보
             </div>
         </div>
     );
