@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
-import RestoValue from "../components/RestoValue";
+import { useParams } from "react-router-dom";
 
-function RestoTotalReview({ restaurant_id }) {
-    const validRestaurantId = restaurant_id || "1";
+import RestoValue from "../components/RestoValue";
+function RestoTotalReview() {
+    const { id } = useParams();  // ✅ URL에서 restaurantId 가져오기
     const [reviews, setReviews] = useState([]);
     const [isPhotoOnly, setIsPhotoOnly] = useState(false);
     const [sortType, setSortType] = useState("LATEST"); // ✅ 기본 정렬 방식: 최신순
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    console.log("restaurantId:", validRestaurantId);
 
     // ✅ 가게 리뷰 데이터 불러오기
     useEffect(() => {
-        if (!validRestaurantId) {
+        if (!id) {
             console.error("restaurantId is undefined. API request skipped.");
             return;
         }
@@ -21,7 +21,7 @@ function RestoTotalReview({ restaurant_id }) {
         const fetchReviews = async () => {
             try {
                 const response = await fetch(
-                    `http://i12a701.p.ssafy.io:8080/api/reviews?restaurantId=${validRestaurantId}`
+                    `http://i12a701.p.ssafy.io:8080/api/reviews?restaurantId=${id}`
                 );
                 if (!response.ok) {
                     throw new Error(`Failed to fetch review data: ${response.status}`);
@@ -40,7 +40,7 @@ function RestoTotalReview({ restaurant_id }) {
         };
 
         fetchReviews();
-    }, [validRestaurantId]);
+    }, [id]);
 
     // ✅ 포토 리뷰 필터링 적용
     const filteredReviews = isPhotoOnly
@@ -77,7 +77,7 @@ function RestoTotalReview({ restaurant_id }) {
     return (
         <div className="p-4 bg-white">
             <RestoValue 
-                restaurantId={validRestaurantId}
+                restaurantId={id}
             />
             {/* 리뷰 카운트 및 필터 */}
             <div className="flex items-center justify-between mb-4">
